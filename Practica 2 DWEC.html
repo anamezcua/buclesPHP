@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Práctica 2 - DWEC</title>
+</head>
+<body>
+    <h1>Tema 2. Arrays y bucles</h1>
+    <div id="array"></div>
+
+    <h2>Bucle For</h2>
+    <div id="resultadoFor"></div>
+    
+    <h2>Bucle While</h2>
+    <div id="resultadoWhile"></div>
+    
+    <h2>Bucle Do-while</h2>
+    <div id="resultadoDoWhile"></div>
+
+    <h2>Resultados pares</h2>
+    <div id="resultadoPares"></div>
+
+    <script>
+
+//ARRAYS
+
+    //Array con la información del almumno
+    var fichAlumno = ["Ana", "Amezcua", "González", "15470005K", "DWEC", "DAW", "FOC"];
+    //Array con las etiquetas correspondientes a cada dato
+    var etiquetas = ["Nombre", "Apellido 1", "Apellido 2", "DNI", "Módulo", "Ciclo", "Centro"];
+
+//BUCLES
+
+//Bucle For
+
+    //Inicializo una variable para ir guardar el resultado que se mostrará en el HTML
+    var resultadoFor = '';
+    //Creo una variable "i" que comienza en 0 y aumenta en 1 hasta llegar al final del array etiquetas
+    //Así, recorre los arrays enteros
+    for (var i = 0; i < etiquetas.length; i++) {
+        //Para cada iteración, concateno en resultadoFor (con +=) la etiqueta con el valor
+        //Uso <br> para hacer un salto de línea, además de darle la estructura de los dos puntos
+        resultadoFor += etiquetas[i] + ': ' + fichAlumno[i] + '<br>';
+    }
+    //Cojo el resultado con getElementById y lo meto en resultadoFor
+    document.getElementById('resultadoFor').innerHTML = resultadoFor;
+
+//Bucle While
+
+    //Inicializo una variable para ir guardar el resultado que se mostrará en el HTML
+    var resultadoWhile = '';
+    //Creo una variable "j" que hace como contador para recorrer los arrays
+    var j = 0;
+    //Mientras el valor de j sea menor que el número de elementos que hay en etiquetas, el bucle se ejecutará
+    while (j < etiquetas.length) {
+        //Para cada iteración, concateno en resultadoWhile (con +=) la etiqueta con el valor
+        //Uso <br> para hacer un salto de línea, además de darle la estructura de los dos puntos
+        resultadoWhile += etiquetas[j] + ': ' + fichAlumno[j] + '<br>';
+        //Aumento j en 1 para pasar al siguiente elemento 
+        j++;
+    }
+    //Cojo el resultado con getElementById y lo meto en resultadoWhile
+    document.getElementById('resultadoWhile').innerHTML = resultadoWhile;
+
+//Bucle Do-while
+    //Inicializo una variable para ir guardar el resultado que se mostrará en el HTML
+    var resultadoDoWhile = '';
+    //Creo una variable "k" que hace como contador para recorrer los arrays
+    var k = 0;
+
+    //El bucle do-while ejecuta primero el código dentro del bloque do y luego verifica la condición
+    //El bloque de código se ejecuta al menos una vez
+    do {
+        //Para cada iteración, concateno en resultadoDoWhile (con +=) la etiqueta con el valor
+        //Uso <br> para hacer un salto de línea, además de darle la estructura de los dos puntos
+        resultadoDoWhile += etiquetas[k] + ': ' + fichAlumno[k] + '<br>';
+        //Aumento k en 1 para pasar al siguiente elemento 
+        k++;
+    //Si k sigue siendo menor que el tamaño de etiquetas, el bucle se repetirá
+    } while (k < etiquetas.length);
+    //Cojo el resultado con getElementById y lo meto en resultadoDoWhile
+    document.getElementById('resultadoDoWhile').innerHTML = resultadoDoWhile;
+
+
+//Mostrar posiciones pares
+
+    //Inicializo una variable para guardar el resultado que se mostrará en el HTML
+    var resultadoPares = '';
+    //Recorro los arrays utilizando un bucle For
+    for (var i = 0; i < etiquetas.length; i++) {
+        //Uso un condicional if para verificar si la posición es par
+        if (i % 2 === 0) { //Si es par...
+            //Concateno en resultadoPares la etiqueta con su valor correspondiente
+            resultadoPares += etiquetas[i] + ': ' + fichAlumno[i] + '<br>';
+            }
+        }
+        //Cojo el resultado con getElementById y lo meto en resultadoPares
+        document.getElementById('resultadoPares').innerHTML = resultadoPares;
+    </script>
+</body>
+</html>
